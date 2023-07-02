@@ -30,11 +30,6 @@ public class E24_Time : Card
         _timeLimitController.AddTimeLimit(_addValueInSeconds, _handMediator.FindAll(this));
     }
 
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Sell()
     {
         _timeLimitController.ReduceTimeLimit(_reduceValueInSeconds, _handMediator.FindAll(this));

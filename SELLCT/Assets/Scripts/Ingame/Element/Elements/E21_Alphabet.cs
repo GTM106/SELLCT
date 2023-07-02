@@ -16,13 +16,11 @@ public class E21_Alphabet : Card
     private void Awake()
     {
         _phaseController.OnTradingPhaseStart.Add(OnPhaseStart);
-        _phaseController.OnExplorationPhaseStart += OnPhaseStart;
     }
 
     private void OnDestroy()
     {
         _phaseController.OnTradingPhaseStart.Remove(OnPhaseStart);
-        _phaseController.OnExplorationPhaseStart -= OnPhaseStart;
     }
 
     private void OnPhaseStart()
@@ -38,11 +36,6 @@ public class E21_Alphabet : Card
         StringManager.hasElements[elementIndex] = true;
         _moneyPossessedController.EnableAlphabet();
         _alphabetHandView.Set();
-    }
-
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
     }
 
     public override void Sell()

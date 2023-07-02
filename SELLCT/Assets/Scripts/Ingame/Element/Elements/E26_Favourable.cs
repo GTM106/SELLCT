@@ -33,11 +33,6 @@ public class E26_Favourable : Card
         _favourableView.SetActive(true);
     }
 
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Sell()
     {
         base.Sell();

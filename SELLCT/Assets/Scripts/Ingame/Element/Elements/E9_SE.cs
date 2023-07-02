@@ -16,11 +16,6 @@ public class E9_SE : Card
         SetSEValue();
     }
 
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Sell()
     {
         base.Sell();

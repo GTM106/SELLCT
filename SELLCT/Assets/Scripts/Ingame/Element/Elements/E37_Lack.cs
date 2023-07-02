@@ -9,19 +9,10 @@ public class E37_Lack : Card
     public override void Buy()
     {
         base.Buy();
-
-    }
-
-    public override void OnPressedU6Button()
-    {
-        //Do Nothing...
-        throw new System.NotImplementedException();
     }
 
     public override void Sell()
     {
         base.Sell();
-
     }
-
 }

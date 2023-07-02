@@ -17,11 +17,6 @@ public class E2_Sell : Card
         EnabledSelectable();
     }
 
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Sell()
     {
         base.Sell();

@@ -38,7 +38,6 @@ public class CursorController : MonoBehaviour
 
         _dragAndDropController = new(_cursorTransform);
 
-        _phaseController.OnExplorationPhaseStart += OnExplorationPhaseStart;
         _phaseController.OnTradingPhaseStart.Add(OnTradingPhaseStart);
     }
 
@@ -64,8 +63,7 @@ public class CursorController : MonoBehaviour
 
     private void OnDestroy()
     {
-        _phaseController.OnExplorationPhaseStart -= OnExplorationPhaseStart;
-        _phaseController.OnTradingPhaseStart.Remove(OnExplorationPhaseStart);
+        _phaseController.OnTradingPhaseStart.Remove(OnTradingPhaseStart);
     }
 
     private void Update()
@@ -87,16 +85,6 @@ public class CursorController : MonoBehaviour
         _cursorPos.Set(posX, posY);
 
         _cursorTransform.anchoredPosition = _cursorPos;
-    }
-
-    private void OnExplorationPhaseStart()
-    {
-        Enable();
-
-        _rectTransforms.Clear();
-
-        //IPointerEnterを持ち、現在有効なキャンバス内にあるRectTransformを格納。ある程度の計算量が必要
-        _rectTransforms.AddRange(FindObjectsByType<RectTransform>(FindObjectsSortMode.None).Where(x => x.GetComponent<IPointerEnterHandler>() != null && x.GetComponentInParent<Canvas>().enabled));
     }
 
     private void OnTradingPhaseStart()

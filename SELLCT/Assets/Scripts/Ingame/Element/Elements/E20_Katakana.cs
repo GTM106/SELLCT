@@ -14,14 +14,13 @@ public class E20_Katakana : Card
     private void Awake()
     {
         _phaseController.OnTradingPhaseStart.Add(OnPhaseStart);
-        _phaseController.OnExplorationPhaseStart += OnPhaseStart;
     }
 
     private void OnDestroy()
     {
         _phaseController.OnTradingPhaseStart.Remove(OnPhaseStart);
-        _phaseController.OnExplorationPhaseStart -= OnPhaseStart;
     }
+
     private void OnPhaseStart()
     {
         StringManager.hasElements[elementIndex] = _handMediator.ContainsCard(this);
@@ -34,11 +33,6 @@ public class E20_Katakana : Card
 
         StringManager.hasElements[elementIndex] = true;
         _katakanaHandView.Set();
-    }
-
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
     }
 
     public override void Sell()

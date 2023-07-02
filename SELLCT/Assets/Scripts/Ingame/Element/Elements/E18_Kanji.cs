@@ -15,13 +15,11 @@ public class E18_Kanji : Card
     private void Awake()
     {
         _phaseController.OnTradingPhaseStart.Add(OnPhaseStart);
-        _phaseController.OnExplorationPhaseStart += OnPhaseStart;
     }
 
     private void OnDestroy()
     {
         _phaseController.OnTradingPhaseStart.Remove(OnPhaseStart);
-        _phaseController.OnExplorationPhaseStart -= OnPhaseStart;
     }
 
     private void OnPhaseStart()
@@ -46,11 +44,6 @@ public class E18_Kanji : Card
         StringManager.hasElements[elementIndex] = true;
         _kanjiHandView.Set();
         _deckUIController.EnableKanji();
-    }
-
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
     }
 
     public override void Sell()

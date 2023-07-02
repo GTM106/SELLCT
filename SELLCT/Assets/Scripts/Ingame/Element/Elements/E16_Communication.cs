@@ -12,11 +12,6 @@ public class E16_Communication : Card
 
     }
 
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Sell()
     {
         base.Sell();

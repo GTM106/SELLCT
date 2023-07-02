@@ -101,8 +101,4 @@ public abstract class Card : MonoBehaviour
         if (_playableDirectorOnSell == null) return;
         _playableDirectorOnSell.Play();
     }
-    /// <summary>
-    /// 探索フェーズにおけるU6ボタン押下時の効果
-    /// </summary>
-    public abstract void OnPressedU6Button();
 }

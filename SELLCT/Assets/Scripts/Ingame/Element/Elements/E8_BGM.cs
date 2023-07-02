@@ -16,11 +16,6 @@ public class E8_BGM : Card
         SetBGMValue();
     }
 
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Sell()
     {
         base.Sell();

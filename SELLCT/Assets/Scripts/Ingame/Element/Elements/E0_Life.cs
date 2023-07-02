@@ -15,15 +15,6 @@ public class E0_Life : Card
     public override void Buy()
     {
         base.Buy();
-
-        //TODO:SE301の再生
-        //TODO:画面全体を脈動させるアニメーション
-        //TODO:テキストボックスを更新する
-    }
-
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
     }
 
     public override void Sell()

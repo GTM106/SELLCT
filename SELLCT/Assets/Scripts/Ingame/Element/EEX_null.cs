@@ -28,10 +28,6 @@ public class EEX_null : Card
     {
         throw new System.NotImplementedException();
     }
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
     public override void Sell()
     {
         throw new System.NotImplementedException();

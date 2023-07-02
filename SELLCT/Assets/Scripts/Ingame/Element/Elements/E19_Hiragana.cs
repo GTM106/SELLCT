@@ -14,13 +14,11 @@ public class E19_Hiragana : Card
     private void Awake()
     {
         _phaseController.OnTradingPhaseStart.Add(OnPhaseStart);
-        _phaseController.OnExplorationPhaseStart += OnPhaseStart;
     }
 
     private void OnDestroy()
     {
         _phaseController.OnTradingPhaseStart.Remove(OnPhaseStart);
-        _phaseController.OnExplorationPhaseStart -= OnPhaseStart;
     }
 
     private void OnPhaseStart()
@@ -35,11 +33,6 @@ public class E19_Hiragana : Card
 
         StringManager.hasElements[elementIndex] = true;
         _hiraganaHandView.Set();
-    }
-
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
     }
 
     public override void Sell()

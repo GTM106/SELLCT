@@ -15,11 +15,6 @@ public class E12_Eye : Card
         base.Buy();
     }
 
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Sell()
     {
         if (GameOverChecker()) return;

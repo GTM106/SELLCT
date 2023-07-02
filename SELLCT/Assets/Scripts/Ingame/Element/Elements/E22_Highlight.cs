@@ -32,11 +32,6 @@ public class E22_Highlight : Card
         _highlightController.Enable();
     }
 
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Sell()
     {
         base.Sell();

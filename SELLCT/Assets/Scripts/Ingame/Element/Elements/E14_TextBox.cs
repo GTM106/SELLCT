@@ -34,11 +34,6 @@ public class E14_TextBox : Card
         _textBoxController.Enable();
     }
 
-    public override void OnPressedU6Button()
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override void Sell()
     {
         base.Sell();
