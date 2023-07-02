@@ -12,7 +12,6 @@ public class PhaseController : MonoBehaviour
     enum Phase
     {
         None,
-        Exploration,
         Trading,
         PhaseEnd,
     }
@@ -25,11 +24,9 @@ public class PhaseController : MonoBehaviour
 
     //意図的にアクションの実行順を入れ替えたいため、Listにしています。
     public readonly List<Action> OnGameStart = new();
-    public event Action OnExplorationPhaseStart;
 
     //意図的にアクションの実行順を入れ替えたいため、Listにしています。
     public readonly List<Action> OnTradingPhaseStart = new();
-    public event Action OnExplorationPhaseComplete;
     public readonly List<Func<UniTask>> OnTradingPhaseComplete = new();
 
     //イベントの登録が終わってから実行したいため、Startで行う。
@@ -42,7 +39,6 @@ public class PhaseController : MonoBehaviour
         }
 
         //初期フェーズ
-        //StartExplorationPhase();
         StartTradingPhase();
     }
 
@@ -50,19 +46,8 @@ public class PhaseController : MonoBehaviour
     {
         //リスナーの解除
         OnGameStart.Clear();
-        OnExplorationPhaseStart = null;
         OnTradingPhaseStart.Clear();
-        OnExplorationPhaseComplete = null;
         OnTradingPhaseComplete.Clear();
-    }
-
-    private void StartExplorationPhase()
-    {
-        //すでに探索フェーズなら実行しない。
-        if (_currentPhase == Phase.Exploration) return;
-
-        _currentPhase = Phase.Exploration;
-        OnExplorationPhaseStart?.Invoke();
     }
 
     private void StartTradingPhase()
@@ -76,19 +61,6 @@ public class PhaseController : MonoBehaviour
         {
             OnTradingPhaseStart[i]?.Invoke();
         }
-    }
-
-    public void CompleteExplorationPhase()
-    {
-        //探索フェーズでないなら実行しない。
-        if (_currentPhase != Phase.Exploration) return;
-
-        OnExplorationPhaseComplete?.Invoke();
-
-        _currentPhase = Phase.PhaseEnd;
-
-        //遷移先に遷移
-        StartTradingPhase();
     }
 
     public async void CompleteTradingPhase()
