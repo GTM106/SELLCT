@@ -32,7 +32,7 @@
 - 拡張メソッド
 
 ## 担当箇所
-- `Scriptsフォルダ`にある`DataManagementフォルダ` `Endingフォルダ`を除いたプログラム
+- `Scriptsフォルダ`にある`DataManagementフォルダ` `Endingフォルダ`を**除いた**プログラム
 - 紹介動画制作
 
 ## 主な担当スクリプト解説
