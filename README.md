@@ -42,22 +42,22 @@
   - カードを売買した際に、それぞれのカードがどのような効果をもたらすかを実装する際の抽象クラスです。
   - インスペクターから管理したいため、interfaceではなくclassとして実装しています。
   - オブジェクト指向の三要素(継承・カプセル化・ポリモーフィズム)をすべて使用しているソースコードになります。
-- [TimeLimit.cs](SELLCT\Assets\Scripts\Ingame\TradingPhase\ValueObject\TimeLimit.cs)
+- [TimeLimit.cs](SELLCT/Assets/Scripts/Ingame/TradingPhase/ValueObject/TimeLimit.cs)
   - 制限時間の値オブジェクトです。
   - `Add()`などの引数に当クラスを使用することで、想定外の値の代入や人為的ミスの軽減が目的です。
     - 制限時間の減少は頻繁に行われる処理です。よって不変でインスタンスを生成するのではなく、可変にして、コストを削減しています。
-- [Money.cs](SELLCT\Assets\Scripts\Ingame\TradingPhase\ValueObject\Money.cs)
+- [Money.cs](SELLCT/Assets/Scripts/Ingame/TradingPhase/ValueObject/Money.cs)
   - お金の値オブジェクトです。
   - `TimeLimit.cs`とは異なり、不変を活用しています。
     - お金は頻繁に増減しない処理だからです。
   - Moneyクラス同士で比較が出来るように演算子オーバーロードを用いています。
-- [EEX_null.cs](SELLCT\Assets\Scripts\Ingame\Element\EEX_null.cs)
+- [EEX_null.cs](SELLCT/Assets/Scripts/Ingame/Element/EEX_null.cs)
   - Cardクラスを継承したそれぞれのカードを表すクラスのうちの1つです。
   - 命名規則を E〇_◆◆(◯・・・ID、◆◆・・・名前)としています。
     - 基本的なC#の命名規則に違反していますが、わかりやすさ、管理しやすさのためあえてこのようにしています。
   - 特徴として、nullチェックのかわりにこのクラスかどうかを判定させるようにしています。
     - これは反省点としてのピックアップです。私は制作者のため理解していましたが、周知させたところでただの混乱の元になっていたように感じます。
-- [PhaseController.cs](SELLCT\Assets\Scripts\Ingame\PhaseController.cs)
+- [PhaseController.cs](SELLCT/Assets/Scripts/Ingame/PhaseController.cs)
   - フェーズの進行に責任を持つクラスです。
   - Observerパターンを用いています。
 
